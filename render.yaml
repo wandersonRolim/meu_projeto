@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: meu-projeto-backend
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python src/main.py
+    rootDir: backend
+    disk:
+      name: meu-projeto-db
+      mountPath: /opt/render/project/src/backend/src/database
+  - type: static
+    name: meu-projeto-frontend
+    env: static
+    buildCommand: npm install && npm run build
+    publishPath: dist
+    rootDir: frontend
+
