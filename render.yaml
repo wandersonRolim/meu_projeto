@@ -5,6 +5,9 @@ services:
     buildCommand: pip install -r requirements.txt
     startCommand: python src/main.py
     rootDir: backend
+    envVars:
+      - key: DATABASE_URL
+        value: postgresql://neondb_owner:npg_qI1JU3LmQNSf@ep-icy-queen-adt9bgeq-pooler.c-2.us-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require
   - type: web
     name: meu-projeto-frontend
     env: static
