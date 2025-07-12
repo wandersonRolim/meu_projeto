@@ -8,10 +8,9 @@ services:
     disk:
       name: meu-projeto-db
       mountPath: /opt/render/project/src/backend/src/database
-  - type: static
+  - type: web
     name: meu-projeto-frontend
     env: static
     buildCommand: npm install && npm run build
-    publishPath: dist
+    staticPublishPath: dist
     rootDir: frontend
-
